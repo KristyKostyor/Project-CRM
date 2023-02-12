@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <section class="modal">
+        <div class="conainer">
+            <h2 class="modal__title">Добавить товар</h2>
+    <div class="form form__bg">
+<form action="form-modal">
+    <fieldset class="form__size">
+    <label class="form__name form__label__style" for="name">Наименование
+        <input class="form__style_input" type="text" name="name" id="name">
+    </label>
+        <label class="form__category form__label__style"  for="category">Категория
+        <input class="form__style_input" type="text" name="category" id="category">
+    </label>
+        <label class="form__scale form__label__style" for="scale">Единицы измерения
+        <input class="form__style_input" type="text" name="scale" id="category">
+    </label>
+    
+        <label class="form__discount form__label__style" for="scale">Дисконт 
+        <input class="form__style_check" type="checkbox" name="dicsount" id="discount">
+        <input class="form__style_discount" type="text" name="dicsount-sum" id="discount-sum">
+
+    </label> 
+    <label class="form__description form__label__style" for="description">Описание 
+    <textarea class="form__description" name="discription" id="discription" cols="30" rows="10"></textarea>
+    </label>
+
+    
+        <label class="form__amount form__label__style"  for="amount">Количество
+        <input class="form__style_input" type="text" name="amount" id="amount">
+    </label>
+    
+        <label class="form__price form__label__style"  for="price">Цена
+        <input class="form__style_input" type="text" name="price" id="price">
+    </label>
+    </fieldset>
+    <button class="form__button" type="submit">Добваить товар</button>
+</form>
+    </div>
+    </div>
+    </section>
+</body>
+</html>
