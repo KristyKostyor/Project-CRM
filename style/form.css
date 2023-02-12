@@ -76,7 +76,7 @@
     padding: 15px;
 }
 
-.form__style_check[type="checkbox"] {
+.form__style__check[type="checkbox"] {
     display: none;
 }
 
