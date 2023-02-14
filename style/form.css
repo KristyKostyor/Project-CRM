@@ -18,14 +18,15 @@
 
 .form__label__style {
     font-weight: 600;
+
     font-size: 12px;
     line-height: 15px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #6E6893;
-    margin-top: 20px;
-}
+    margin-top: 19px;
 
+}
 
 
 
@@ -35,8 +36,7 @@
     border-radius: 6px;
     border-style: none;
     background-color: #F4F2FF;
-    color: #6E6893;
-    margin: 5px 0 12px 0;
+    margin: 12px 0 5px 0;
 }
 
 .form__style__discount {
@@ -45,12 +45,9 @@
     border-radius: 6px;
     border-style: none;
     background-color: #EEEEEE;
+    display: inline-block;
+    vertical-align: middle;
 }
-
-.form__discount {
-    margin: 0;
-    padding: 0;
-    }
 
 .form__style__check {
     width: 40px;
@@ -58,6 +55,44 @@
     background: #F4F2FF;
     border-radius: 6px;
     border-style: none;
+    margin-top: 20px;
+
+}
+
+
+
+
+.form__style__check {
+    width: 40px;
+    background-color: #f4f2ff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+   
+    -webkit-appearance: none;
+    appearance: none;
+    float: left;
+  
+}
+
+.form__style__check::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('../img/cheked.png');
+}
+
+
+.form__description {
+    width: 524px;
+    display: block;
+    height: 112px;
+    background: #F4F2FF;
+    border-radius: 6px;
+    border-style: none;
+    resize: none;
 }
 
 .form__button {
@@ -70,37 +105,18 @@
     border-radius: 6px;
     color: white;
     border-style: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
 }
 
-.label {
-    padding: 15px;
-}
-
-.form__style__check[type="checkbox"] {
-    display: none;
-}
-
-.form__discount::after {
-    content: " ";
-    color: #000;
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    background: #F4F2FF;
-    border-radius: 6px;
-    vertical-align: middle;
-}
-
-.form__style__check:checked {
-    color: black;
-}
-
-.form__description {
-    width: 524px;
-    height: 112px;
-    background: #F4F2FF;
-    border-radius: 6px;
+.form__button__cancel {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 742px;
+    top: 20px;
     border-style: none;
 }

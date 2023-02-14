@@ -11,11 +11,19 @@
 
 <body>
     <section class="modal">
-        <div class="conainer">
-            <h2 class="modal__title">Добавить товар</h2>
+        <div class="container">
+            <h1 class="modal__title">Добавить товар</h1>
+                                    <button class="form__button__cancel">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
+<path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
+</svg>
+
+                        </button>
             <div class="form">
-                <form action="form-modal">
+                <form  id="form-modal" action="https://jsonplaceholder.typicode.com/posts" method="POST">
                     <fieldset class="form__size">
+
                         <label class="form__name form__label__style" for="name">Наименование
                             <input class="form__style__input" type="text" name="name" id="name">
                         </label>
@@ -44,7 +52,7 @@
                             <input class="form__style__input" type="text" name="price" id="price">
                         </label>
                     </fieldset>
-                    <button class="form__button" type="submit">Добваить товар</button>
+                    <button class="form__button" type="submit">Добавить товар</button>
                 </form>
             </div>
         </div>
