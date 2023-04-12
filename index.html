@@ -10,53 +10,59 @@
 </head>
 
 <body>
-    <section class="modal">
-        <div class="container">
+    <div class="overlay">
+    <div class="modal">
+            <div class="modal__wrapper">
             <h1 class="modal__title">Добавить товар</h1>
-                                    <button class="form__button__cancel">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
-<path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
-</svg>
-
-                        </button>
+            <button class="form__button-cancel">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round" />
+                    <path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round" />
+                </svg>
+            </button>
+            </div>
             <div class="form">
-                <form  id="form-modal" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+                <form id="form-modal" class="form-modal" action="https://jsonplaceholder.typicode.com/posts" method="POST">
                     <fieldset class="form__size">
 
-                        <label class="form__name form__label__style" for="name">Наименование
-                            <input class="form__style__input" type="text" name="name" id="name">
-                        </label>
-                        <label class="form__category form__label__style" for="category">Категория
-                            <input class="form__style__input" type="text" name="category" id="category">
-                        </label>
-                        <label class="form__scale form__label__style" for="scale">Единицы измерения
-                            <input class="form__style__input" type="text" name="scale" id="category">
-                        </label>
-
-                        <label class="form__discount form__label__style" for="scale">Дисконт
+                        <label class="form__name form__label__style" for="name">Наименование</label>
+                        <input class="form__style__input" type="text" name="name" id="name">
+                        <label class="form__category form__label__style" for="category">Категория</label>
+                        <input class="form__style__input" type="text" name="category" id="category">
+                        <label class="form__scale form__label__style" for="scale">Единицы измерения</label>
+                        <input class="form__style__input" type="text" name="scale" id="category">
+                        <label class="form__discount form__label__style" for="scale">Дисконт</label>
+                        <div class="form__discount-block">
                             <input class="form__style__check" type="checkbox" name="dicsount" id="discount">
                             <input class="form__style__discount" type="text" name="dicsount-sum" id="discount-sum">
-
-                        </label>
-                        <label class="form__description form__label__style" for="description">Описание
-                            <textarea class="form__description" name="discription" id="discription" cols="30" rows="10"></textarea>
-                        </label>
-
-
-                        <label class="form__amount form__label__style" for="amount">Количество
-                            <input class="form__style__input" type="text" name="amount" id="amount">
-                        </label>
-
-                        <label class="form__price form__label__style" for="price">Цена
-                            <input class="form__style__input" type="text" name="price" id="price">
-                        </label>
+                            </div>
                     </fieldset>
-                    <button class="form__button" type="submit">Добавить товар</button>
+
+                    <fieldset class="form__size">
+                        <label class="form__label__style" for="description">Описание</label>
+                        <textarea class="form__description" name="discription" id="discription" cols="30" rows="10"></textarea>
+
+
+                        <label class="form__amount form__label__style" for="amount">Количество</label>
+                        <input class="form__style__input" type="text" name="amount" id="amount">
+                        <label class="form__price form__label__style" for="price">Цена</label>
+                           <input class="form__style__input" type="text" name="price" id="price">
+
+                        <div class="form__add-block">
+                     
+                        <label for="file" class="form__add-img" type="submit">Добавить изображение</label>
+                        <input type="file" id="file" accept=".jpg, .jpeg, .png" size="1000" class="file-input">
+                        </div>
+                    </fieldset>
                 </form>
+                <div class="modal__add-block">
+                    <p>Итоговая стоимость: <span class="modal__price">$ 900.00</span> </p>
+                    <button class="form__button" type="submit">Добавить товар</button>
+                    
+                    </div>
             </div>
-        </div>
-    </section>
+    </div>
+    </div>
 </body>
 
 </html>
