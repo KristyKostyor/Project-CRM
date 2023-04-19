@@ -1,0 +1,119 @@
+.table-block {
+    padding-bottom: 50px;
+}
+
+.table__head,
+.table__foot {
+    background-color: #F4F2FF;
+    border-top: 1px solid #D9D5EC;
+    border-bottom: 1px solid #D9D5EC;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.table__cell-name {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 15px 0 15px 15px;
+    color: #6E6893;
+}
+
+table {
+    margin: 0;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+
+.table__cell-id {
+    padding-right: 80px;
+}
+
+.table__cell-flex {
+    display: flex;
+    padding: 20px 15px;
+}
+
+.table__cell-td {
+    padding: 22px 0 21px 15px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #25213B;
+}
+
+.table__cell-td__col {
+    text-align: center;
+}
+
+.table__cell-btn {
+    margin-right: 20px;
+}
+
+.table__cell-btn:last-child {
+    margin-right: 0;
+}
+
+.table__tr {
+    border-top: 1px solid #D9D5EC;
+    border-bottom: 1px solid #D9D5EC;
+
+}
+
+.table__quantity {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 15px 0 15px 15px;
+    color: #6E6893;
+}
+
+.table__select {
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #6E6893;
+}
+
+.table__foot {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.table__number-product {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #6E6893;
+}
+
+.table__quantity-product {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.table__foot-btn {
+    background-color: transparent;
+    border: none;
+
+}
+
+.table__foot-buttons {
+    padding-right: 20px;
+}
+
+.btn-pad {
+    padding-right: 50px;
+}

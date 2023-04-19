@@ -12,6 +12,7 @@ html {
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Inter:wght@400;600;700&display=swap');
 
 body {
+    background-color: #F2F0F9;
     min-width: 320px;
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
@@ -78,6 +79,5 @@ iframe {
 
 .container {
     max-width: 1100px;
-    padding: 0 ;
     margin: 0 auto;
 }

@@ -128,17 +128,19 @@
 }
 
 .modal__wrapper {
-    border-bottom: 1px solid var(--main-border-color);
+    border-bottom: 1px solid #C6C2DE;
     margin-bottom: 21px;
     padding-bottom: 21px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .form__add-block {
     padding-top: 43px;
     padding-bottom: 39px;
 }
+
 .form__add-img {
     background-color: #6D5BD0;
     color: white;
@@ -151,9 +153,9 @@
     cursor: pointer;
 }
 
-.file-input{
+.file-input {
     display: none;
-} 
+}
 
 .form__discount-block {
     display: flex;
