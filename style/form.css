@@ -12,7 +12,7 @@
     grid-template-columns: repeat(2, 250px);
     column-gap: 24px;
     row-gap: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 73px;
 }
 
 .form__size {
@@ -118,14 +118,9 @@
     line-height: 17px;
     text-transform: uppercase;
     padding: 11px 28px;
-    margin-top: 43px;
 }
 
-.form__button-cancel {
-    width: 20px;
-    height: 20px;
-    border-style: none;
-}
+
 
 .modal__wrapper {
     border-bottom: 1px solid #C6C2DE;

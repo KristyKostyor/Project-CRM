@@ -27,9 +27,15 @@
     align-items: baseline;
 }
 
-.modal__price {
+.header__price {
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
     color: #6D5BD0;
+}
+
+.modal__button-cancel {
+    width: 20px;
+    height: 20px;
+    border-style: none;
 }

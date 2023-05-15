@@ -13,7 +13,7 @@
     <div class="container">
         <header class="header">
             <h1 class="header__title">CMS</h1>
-            <p>Итоговая стоимость: <span class="modal__price">$ 900.00</span> </p>
+            <p>Итоговая стоимость: <span class="header__price">$ 900.00</span> </p>
         </header>
         <div class="product">
             <div class="product__search-form">
@@ -25,7 +25,7 @@
                 <button class="product__search-form__button" type="submit">Добавить товар</button>
             </div>
         </div>
-        <div class="table-block">
+        <div class="table">
             <table>
                 <thead class="table__head">
                     <tr>
@@ -311,35 +311,35 @@
                 </tbody>
             </table>
             <div class="table__foot">
-            <div class="table__quantity">
-                <label for="quantity">Показывать на странице:</label>
-                <select name="number" id="quantity" class="table__select">10
-                <option value="value_one">5</option>
-                <option value="value_two" selected>10</option>
-                </select>
-            </div>
-            <div class="table__quantity-product">
-                <span class="table__number-product ">1-10</span>
-                <span class="table__number-product">of 276</span>
-            </div>
-            <div class="table__foot-buttons">
-            <button class="table__foot-btn btn-pad"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5.79971 1.10636C6.42812 0.51287 5.43313 -0.426818 4.80472 0.216126L0.196378 4.51891C-0.0654595 4.7662 -0.0654595 5.21131 0.196378 5.4586L4.80472 9.81084C5.43313 10.4043 6.42812 9.46464 5.79971 8.87115L1.71504 5.01348L5.79971 1.10636Z" fill="#6E6893"/>
-</svg>
-</button>
-<button class="table__foot-btn"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.200292 1.10636C-0.428119 0.51287 0.566865 -0.426818 1.19528 0.216126L5.80362 4.51891C6.06546 4.7662 6.06546 5.21131 5.80362 5.4586L1.19528 9.81084C0.566865 10.4043 -0.428119 9.46464 0.200292 8.87115L4.28496 5.01348L0.200292 1.10636Z" fill="#6E6893"/>
-</svg>
-</button>
-            </div>
+                <div class="table__quantity">
+                    <label for="quantity">Показывать на странице:</label>
+                    <select name="number" id="quantity" class="table__select">
+                        <option value="value_one">5</option>
+                        <option value="value_two" selected>10</option>
+                    </select>
                 </div>
+                <div class="table__quantity-product">
+                    <span class="table__number-product ">1-10</span>
+                    <span class="table__number-product">of 276</span>
+                </div>
+                <div class="table__foot-buttons">
+                    <button class="table__foot-btn btn-pad"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.79971 1.10636C6.42812 0.51287 5.43313 -0.426818 4.80472 0.216126L0.196378 4.51891C-0.0654595 4.7662 -0.0654595 5.21131 0.196378 5.4586L4.80472 9.81084C5.43313 10.4043 6.42812 9.46464 5.79971 8.87115L1.71504 5.01348L5.79971 1.10636Z" fill="#6E6893" />
+                        </svg>
+                    </button>
+                    <button class="table__foot-btn"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.200292 1.10636C-0.428119 0.51287 0.566865 -0.426818 1.19528 0.216126L5.80362 4.51891C6.06546 4.7662 6.06546 5.21131 5.80362 5.4586L1.19528 9.81084C0.566865 10.4043 -0.428119 9.46464 0.200292 8.87115L4.28496 5.01348L0.200292 1.10636Z" fill="#6E6893" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="overlay">
         <div class="modal">
             <div class="modal__wrapper">
                 <h1 class="modal__title">Добавить товар</h1>
-                <button class="form__button-cancel">
+                <button class="modal__button-cancel">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round" />
                         <path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round" />
@@ -351,19 +351,19 @@
                     <fieldset class="form__size">
                         <label class="form__name form__label__style" for="name">Наименование</label>
                         <input class="form__style__input" type="text" name="name" id="name">
-                        <label class="form__category form__label__style" for="category">Категория</label>
-                        <input class="form__style__input" type="text" name="category" id="category">
+                        <label class="form__category form__label__style" for="scale" id="category">Категория</label>
+                        <input class="form__style__input" type="text" name="category" id="scale-input">
                         <label class="form__scale form__label__style" for="scale">Единицы измерения</label>
-                        <input class="form__style__input" type="text" name="scale" id="category">
-                        <label class="form__discount form__label__style" for="scale">Дисконт</label>
+                        <input class="form__style__input" type="text" name="scale" id="scale">
+                        <label class="form__discount form__label__style" for="discount-sum" id="discount-price">Дисконт</label>
                         <div class="form__discount-block">
-                            <input class="form__style__check" type="checkbox" name="dicsount" id="discount">
-                            <input class="form__style__discount" type="text" name="dicsount-sum" id="discount-sum">
+                            <input class="form__style__check" type="checkbox" name="discount" id="discount">
+                            <input class="form__style__discount" type="text" name="discount-sum" id="discount-sum">
                         </div>
                     </fieldset>
 
                     <fieldset class="form__size">
-                        <label class="form__label__style" for="description">Описание</label>
+                        <label class="form__label__style" for="discription" id="describe">Описание</label>
                         <textarea class="form__description" name="discription" id="discription" cols="30" rows="10"></textarea>
                         <label class="form__amount form__label__style" for="amount">Количество</label>
                         <input class="form__style__input" type="text" name="amount" id="amount">
@@ -371,7 +371,7 @@
                         <input class="form__style__input" type="text" name="price" id="price">
 
                         <div class="form__add-block">
-                            <label for="file" class="form__add-img" type="submit">Добавить изображение</label>
+                            <label for="file" class="form__add-img">Добавить изображение</label>
                             <input type="file" id="file" accept=".jpg, .jpeg, .png" size="1000" class="file-input">
                         </div>
                     </fieldset>
