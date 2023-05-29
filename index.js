@@ -9,12 +9,26 @@ const checkbox = document.querySelector("#discount");
 const discountSum = document.querySelector("#discount-sum");
 const totalPrice = document.querySelector(".modal__price");
 const overlay = document.querySelector(".overlay");
+const addGood = document.querySelector(".product__search-form__button");
 
 modal.style.display = "flex";
 
 closeButton.addEventListener("click", function () {
   modal.style.display = "none";
   overlay.style.display = "none";
+});
+overlay.addEventListener("click", e => {
+  const target = e.target;
+  if(target === overlay){
+    overlay.style.display = "none";
+  }
+ 
+
+});
+addGood.addEventListener('click', () =>{
+  modal.style.display = "flex";
+  overlay.style.display = "flex";
+
 });
 
 const goods = [
@@ -134,14 +148,16 @@ const createRow = ({ id, title, price, category, count, units }) => {
                                 </svg>`;
 
   cellButtons.append(imgBtn, editBtn, delBtn);
-  newRow.appendChild(idCell);
-  newRow.appendChild(titleCell);
-  newRow.appendChild(categoryCell);
-  newRow.appendChild(unitsCell);
-  newRow.appendChild(countCell);
-  newRow.appendChild(priceCell);
-  newRow.appendChild(costCell);
-  newRow.appendChild(cellButtons);
+newRow.append(
+  idCell,
+  titleCell,
+  categoryCell,
+  unitsCell,
+  countCell,
+  priceCell,
+  costCell,
+  cellButtons
+);
 
   return newRow;
 };
