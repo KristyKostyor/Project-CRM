@@ -1,36 +1,4 @@
 "use strict";
-
-const modal = document.querySelector(".modal");
-const modalTitle = document.querySelector(".modal__title");
-const closeButton = document.querySelector(".modal__button-cancel");
-const idInput = document.querySelector("#name");
-const form = document.querySelector("#form-modal");
-const checkbox = document.querySelector("#discount");
-const discountSum = document.querySelector("#discount-sum");
-const totalPrice = document.querySelector(".modal__price");
-const overlay = document.querySelector(".overlay");
-const addGood = document.querySelector(".product__search-form__button");
-
-modal.style.display = "flex";
-
-closeButton.addEventListener("click", function () {
-  modal.style.display = "none";
-  overlay.style.display = "none";
-});
-overlay.addEventListener("click", e => {
-  const target = e.target;
-  if(target === overlay){
-    overlay.style.display = "none";
-  }
- 
-
-});
-addGood.addEventListener('click', () =>{
-  modal.style.display = "flex";
-  overlay.style.display = "flex";
-
-});
-
 const goods = [
   {
     id: 253842678,
@@ -51,7 +19,7 @@ const goods = [
     description:
       "Внедорожник на дистанционном управлении. Скорость 25км/ч. Возраст 7 - 14 лет",
     category: "toys",
-    discount: 5,
+    discont: 5,
     count: 1,
     units: "шт",
     images: {
@@ -66,7 +34,7 @@ const goods = [
     description:
       "Всего лишь один шаг сделает ваш телевизор умным, Быстрый и умный MECOOL KI PRO, прекрасно спроектированный, сочетает в себе прочный процессор Cortex-A53 с чипом Amlogic S905D",
     category: "tv-box",
-    discount: 15,
+    discont: 15,
     count: 4,
     units: "шт",
     images: {
@@ -81,7 +49,7 @@ const goods = [
     description:
       "Витая пара Proconnect 01-0043-3-25 является сетевым кабелем с 4 парами проводов типа UTP, в качестве проводника в которых используется алюминий, плакированный медью CCA. Такая неэкранированная витая пара с одножильными проводами диаметром 0.50 мм широко применяется в процессе сетевых монтажных работ. С ее помощью вы сможете обеспечить развертывание локальной сети в домашних условиях или на предприятии, объединить все необходимое вам оборудование в единую сеть.",
     category: "cables",
-    discount: false,
+    discont: false,
     count: 420,
     units: "v",
     images: {
@@ -90,6 +58,43 @@ const goods = [
     },
   },
 ];
+
+
+
+const modal = document.querySelector(".modal");
+const modalTitle = document.querySelector(".modal__title");
+const closeButton = document.querySelector(".modal__button-cancel");
+const idInput = document.querySelector("#name");
+const form = document.querySelector("#form-modal");
+const checkbox = document.querySelector("#discount");
+const discountSum = document.querySelector("#discount-sum");
+const totalPrice = document.querySelector(".modal__price");
+const overlay = document.querySelector(".overlay");
+const addGood = document.querySelector(".product__search-form__button");
+const delBtn = document.querySelector('#delBtn');
+
+
+modal.style.display = "flex";
+
+closeButton.addEventListener("click", function () {
+  modal.style.display = "none";
+  overlay.style.display = "none";
+});
+overlay.addEventListener("click", e => {
+  const target = e.target;
+  if(target === overlay ){
+    overlay.style.display = "none";
+  }
+ 
+
+});
+addGood.addEventListener('click', () =>{
+  modal.style.display = "flex";
+  overlay.style.display = "flex";
+
+});
+
+
 
 const createRow = ({ id, title, price, category, count, units }) => {
   const newRow = document.createElement("tr");
@@ -140,13 +145,15 @@ const createRow = ({ id, title, price, category, count, units }) => {
                                 </svg>`;
 
   const delBtn = document.createElement("button");
-  delBtn.classList.add("table__cell-btn");
+  delBtn.classList.add("delBtn");
   delBtn.type = "button";
-  delBtn.title = "Редактировать товар";
+  delBtn.title = "Удалить товар";
   delBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z" fill="#6E6893" />
                                 </svg>`;
-
+delBtn.addEventListener("click", () => {
+  newRow.remove();
+});
   cellButtons.append(imgBtn, editBtn, delBtn);
 newRow.append(
   idCell,
@@ -162,6 +169,8 @@ newRow.append(
   return newRow;
 };
 
+
+
 const tableBody = document.querySelector("tbody");
 
 const renderGoods = (goodsArray) => {
@@ -175,3 +184,4 @@ const renderGoods = (goodsArray) => {
 };
 
 renderGoods(goods);
+
