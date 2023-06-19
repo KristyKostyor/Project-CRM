@@ -59,8 +59,6 @@ const goods = [
   },
 ];
 
-
-
 const modal = document.querySelector(".modal");
 const modalTitle = document.querySelector(".modal__title");
 const closeButton = document.querySelector(".modal__button-cancel");
@@ -69,30 +67,54 @@ const form = document.querySelector("#form-modal");
 const checkbox = document.querySelector("#discount");
 const discountSum = document.querySelector("#discount-sum");
 const totalPrice = document.querySelector(".modal__price");
+const totalPriceTable = document.querySelector(".header__price");
 const overlay = document.querySelector(".overlay");
 const addGood = document.querySelector(".product__search-form__button");
-const delBtn = document.querySelector('#delBtn');
-
+const delBtn = document.querySelector("#delBtn");
+const addNewGood = document.querySelector(".form__button");
+const tableBody = document.querySelector("tbody");
 
 modal.style.display = "flex";
 
-closeButton.addEventListener("click", function () {
+closeButton.addEventListener("click", () => {
   modal.style.display = "none";
   overlay.style.display = "none";
 });
-overlay.addEventListener("click", e => {
+overlay.addEventListener("click", (e) => {
   const target = e.target;
-  if(target === overlay ){
+  if (target === overlay) {
     overlay.style.display = "none";
   }
- 
-
 });
-addGood.addEventListener('click', () =>{
+addGood.addEventListener("click", () => {
   modal.style.display = "flex";
   overlay.style.display = "flex";
-
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const checkbox = document.querySelector(".form__style__check");
+  const discountField = document.querySelector("#discount-sum");
+
+  // Проверяем состояние чекбокса при загрузке страницы
+  discountField.disabled = !checkbox.checked;
+
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      // Если чекбокс выбран, поле разблокировано
+      discountField.disabled = false;
+    } else {
+      // Если чекбокс не выбран, поле блокируется и очищается
+      discountField.disabled = true;
+      discountField.value = "";
+    }
+  });
+});
+
+
+
+
+ 
 
 
 
@@ -169,19 +191,113 @@ newRow.append(
   return newRow;
 };
 
+addNewGood.addEventListener("click", function () {
+  const getRandomInt = (min, max) => {
+    min = min < max ? min : max;
+    max = min > max ? min : max;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  const generateId = () => {
+    return getRandomInt(100000000, 999999999);
+  };
 
 
-const tableBody = document.querySelector("tbody");
+  const name = document.getElementById("name").value;
+  const category = document.getElementById("scale-input").value;
+  const scale = document.getElementById("scale").value;
+  const discount = document.getElementById("discount").checked;
+  const discountSum = document.getElementById("discount-sum").value;
+  const modalAmount = document.getElementById("amount").value;
+  const modalPrice = document.getElementById("price").value;
+  const total = modalAmount * modalPrice;
 
+
+
+
+  const newRow = document.createElement("tr");
+  newRow.classList.add("table__tr");
+  const productId = generateId();
+
+
+  
+  newRow.innerHTML = `
+      <td class="table__cell-td">${productId}</td>
+      <td class="table__cell-td">${name}</td>
+      <td class="table__cell-td">${category}</td>
+      <td class="table__cell-td">${scale}</td>
+      <td class="table__cell-td">${modalAmount}</td>
+      <td class="table__cell-td">${modalPrice}</td>
+      <td class="table__cell-td">${total.toFixed(2)}</td>
+       
+    `;
+  /*
+      <td class="table__cell-td">${discount ? "Есть" : "Нет"}</td>
+      <td class="table__cell-td">${discountSum}</td>
+      */
+  tableBody.appendChild(newRow);
+  // Сброс значений полей формы
+    updateTotalPriceTable();
+  form.reset();
+ modal.style.display = "none";
+ overlay.style.display = "none";
+
+  
+});
+
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); 
+
+  modal.style.display = "none";
+  overlay.style.display = "none";
+});
+
+
+const modalAmountInput = document.getElementById("amount");
+const modalPriceInput = document.getElementById("price");
+
+const updateTotalPrice = () => {
+  const amount = parseInt(modalAmountInput.value);
+  const price = parseFloat(modalPriceInput.value);
+
+  if (!isNaN(amount) && !isNaN(price)) {
+    const total = amount * price;
+    totalPrice.textContent = total.toFixed(2);
+  }
+};
+
+modalAmountInput.addEventListener("input", updateTotalPrice);
+modalPriceInput.addEventListener("input", updateTotalPrice);
+
+const updateTotalPriceTable = () => {
+  let total = 0;
+  const rows = Array.from(tableBody.querySelectorAll("tr"));
+
+  rows.forEach((row) => {
+    const priceCell = row.querySelector(".table__cell-td:nth-child(6)");
+    const cost = parseFloat(priceCell.textContent);
+    if (!isNaN(cost)) {
+      total += cost;
+    }
+  });
+
+  totalPriceTable.textContent = total.toFixed(2);
+};
 const renderGoods = (goodsArray) => {
   const table = document.querySelector("table");
+  const tableBody = table.querySelector("tbody");
   while (tableBody.firstChild) {
     tableBody.removeChild(tableBody.firstChild);
   }
 
   const rows = goodsArray.map(createRow);
   tableBody.append(...rows);
+  updateTotalPriceTable();
 };
+
 
 renderGoods(goods);
 

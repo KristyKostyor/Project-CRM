@@ -85,17 +85,24 @@
 }
 
 .form__style__check::after {
-    content: '';
+    content: ' ';
     background: url('../img/cheked.png');
+    background-repeat: no-repeat;
+    background-position: center left;
     position: absolute;
-    width: 22px;
-    height: 18px;
+    width: 45px;
+    height: 45px;
     opacity: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  
+
 }
 
+.form__style__check:checked::after {
+    opacity: 1;
+}
 
 .form__description {
     display: block;
