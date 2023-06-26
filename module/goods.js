@@ -1,4 +1,4 @@
-const goods = [
+ const goods = [
   {
     id: 253842678,
     title: "Смартфон Xiaomi 11T 8/128GB",
@@ -57,3 +57,4 @@ const goods = [
     },
   },
 ];
+export default goods;
