@@ -1,6 +1,6 @@
  import goods from "./goods.js";
  import createRow from "./createRow.js";
- import updateTotalPriceTable  from "./priceTable.js";
+ import updateTotalPriceTable  from "./updateTotalPriceTable.js";
 
  
  export const renderGoods = (goodsArray) => {
@@ -13,5 +13,5 @@
   const rows = goodsArray.map(createRow);
   tableBody.append(...rows);
   updateTotalPriceTable();
-  renderGoods(goods);
 };
+  renderGoods(goods);

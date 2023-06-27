@@ -1,4 +1,4 @@
-const updateTotalPrice = (modalAmountInput, modalPriceInput, totalPrice) => {
+export const updateTotalPrice = (modalAmountInput, modalPriceInput, totalPrice) => {
   const amount = parseInt(modalAmountInput.value);
   const price = parseFloat(modalPriceInput.value);
 
@@ -8,4 +8,12 @@ const updateTotalPrice = (modalAmountInput, modalPriceInput, totalPrice) => {
   }
 };
 
-export { updateTotalPrice };
+
+const modalAmountInput = document.getElementById("amount");
+const modalPriceInput = document.getElementById("price");
+const totalPrice = document.querySelector(".modal__price");
+const updateTotalPriceHandler = () => {
+  updateTotalPrice(modalAmountInput, modalPriceInput, totalPrice);
+};
+modalAmountInput.addEventListener("input", updateTotalPriceHandler);
+modalPriceInput.addEventListener("input", updateTotalPriceHandler);

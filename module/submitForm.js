@@ -1,6 +1,7 @@
+import goods from "./goods.js";
+
 export const submitForm = (
   form,
-  goods,
   createRow,
   tableBody,
   updateTotalPriceTable,
@@ -12,15 +13,9 @@ export const submitForm = (
 
     const formData = new FormData(event.target);
     const newRowData = Object.fromEntries(formData.entries());
-    console.log(newRowData); // Логируем данные из формы
-
     goods.push(newRowData);
-    console.log(goods); // Логируем обновленный массив goods
-
     const newRow = createRow(newRowData);
-    console.log(newRow); // Логируем созданную строку
-
-    tableBody.appendChild(newRow);
+    tableBody.append(newRow);
     updateTotalPriceTable();
 
     form.reset();
