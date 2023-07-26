@@ -1,5 +1,5 @@
 
-const createRow = ({ id, title, price, category, count, units }) => {
+const createRow = ({ id, title, price, category, count, units, picUrl }) => {
   const newRow = document.createElement("tr");
   newRow.classList.add("table__tr");
 
@@ -27,6 +27,8 @@ const createRow = ({ id, title, price, category, count, units }) => {
 
   const cellButtons = document.createElement("td");
   cellButtons.classList.add("table__cell-td");
+
+  newRow.dataset.pic = picUrl;
 
   const imgBtn = document.createElement("button");
   imgBtn.classList.add("table__cell-btn");
@@ -68,6 +70,19 @@ const createRow = ({ id, title, price, category, count, units }) => {
     costCell,
     cellButtons
   );
+  imgBtn.onclick = function () {
+    const url = this.parentElement.parentElement.dataset.pic;
+    const windowFeatures =
+      "width=600,height=600,top=" +
+      (screen.height / 2 - 300) +
+      ",left=" +
+      (screen.width / 2 - 300);
+    window.open(
+      "https://mi-shop.com/upload/iblock/989/989ecdad9b1373d0b2cfe8feaf4c5146.jpg",
+      "_blank",
+      windowFeatures
+    );
+  };
 
   return newRow;
 };
