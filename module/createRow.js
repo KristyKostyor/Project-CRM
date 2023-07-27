@@ -73,7 +73,8 @@ const createRow = ({ id, title, price, category, count, units, picUrl }) => {
   );
 
 imgBtn.addEventListener("click",  (e) => {
-  const picUrl = e.target.getAttribute("data-pic"); // Получаем значение URL из атрибута data-pic
+  const picUrl = e.currentTarget.getAttribute("data-pic"); // Получаем значение URL из атрибута data-pic
+  console.log(picUrl);
   const windowWidth = 600;
   const windowHeight = 600;
   const top = (screen.height - windowHeight) / 2;
