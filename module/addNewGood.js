@@ -27,7 +27,6 @@ const addNewGoodFunction = () => {
     const modalPrice = document.getElementById("price").value;
     const total = modalAmount * modalPrice;
     const newRow = document.createElement("tr");
-
     newRow.classList.add("table__tr");
     const productId = generateId();
 

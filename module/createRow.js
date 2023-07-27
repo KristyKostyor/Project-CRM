@@ -34,6 +34,7 @@ const createRow = ({ id, title, price, category, count, units, picUrl }) => {
   imgBtn.classList.add("table__cell-btn");
   imgBtn.type = "button";
   imgBtn.title = "Изменить изображение";
+  imgBtn.setAttribute("data-pic",  "https://mi-shop.com/upload/iblock/989/989ecdad9b1373d0b2cfe8feaf4c5146.jpg");
   imgBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.7778 2.22223H2.22223C1.92754 2.22223 1.64493 2.33929 1.43655 2.54767C1.22818 2.75604 1.11111 3.03866 1.11111 3.33334V16.6667C1.11111 16.9614 1.22818 17.244 1.43655 17.4523C1.64493 17.6607 1.92754 17.7778 2.22223 17.7778H17.7778C18.0725 17.7778 18.3551 17.6607 18.5635 17.4523C18.7718 17.244 18.8889 16.9614 18.8889 16.6667V3.33334C18.8889 3.03866 18.7718 2.75604 18.5635 2.54767C18.3551 2.33929 18.0725 2.22223 17.7778 2.22223ZM2.22223 16.6667V3.33334H17.7778V16.6667H2.22223Z" fill="#6E6893" />
                                     <path d="M4.95555 7.77778C5.28518 7.77778 5.60741 7.68003 5.8815 7.49689C6.15558 7.31376 6.3692 7.05346 6.49535 6.74892C6.62149 6.44437 6.6545 6.10926 6.59019 5.78596C6.52588 5.46266 6.36715 5.16569 6.13406 4.9326C5.90097 4.69951 5.604 4.54078 5.2807 4.47647C4.9574 4.41216 4.62228 4.44516 4.31774 4.57131C4.0132 4.69746 3.7529 4.91108 3.56976 5.18516C3.38663 5.45924 3.28888 5.78147 3.28888 6.11111C3.28888 6.55314 3.46447 6.97706 3.77703 7.28962C4.0896 7.60218 4.51352 7.77778 4.95555 7.77778ZM4.95555 5.22222C5.13158 5.22112 5.30399 5.27232 5.45089 5.36932C5.5978 5.46632 5.71259 5.60476 5.78072 5.76708C5.84885 5.9294 5.86725 6.1083 5.83358 6.28109C5.79992 6.45389 5.7157 6.61279 5.59161 6.73766C5.46752 6.86253 5.30915 6.94774 5.13657 6.98249C4.96399 7.01724 4.78498 6.99997 4.62223 6.93285C4.45949 6.86574 4.32033 6.75182 4.22241 6.60552C4.12449 6.45923 4.07222 6.28715 4.07221 6.11111C4.07367 5.87729 4.1672 5.65345 4.33255 5.48811C4.49789 5.32277 4.72172 5.22923 4.95555 5.22778V5.22222Z" fill="#6E6893" />
@@ -70,19 +71,25 @@ const createRow = ({ id, title, price, category, count, units, picUrl }) => {
     costCell,
     cellButtons
   );
-  imgBtn.onclick = function () {
-    const url = this.parentElement.parentElement.dataset.pic;
-    const windowFeatures =
-      "width=600,height=600,top=" +
-      (screen.height / 2 - 300) +
-      ",left=" +
-      (screen.width / 2 - 300);
-    window.open(
-      "https://mi-shop.com/upload/iblock/989/989ecdad9b1373d0b2cfe8feaf4c5146.jpg",
-      "_blank",
-      windowFeatures
-    );
-  };
+
+imgBtn.addEventListener("click",  () => {
+  const picUrl = this.getAttribute("data-pic"); // Получаем значение URL из атрибута data-pic
+  const windowWidth = 600;
+  const windowHeight = 600;
+  const top = (screen.height - windowHeight) / 2;
+  const left = (screen.width - windowWidth) / 2;
+  // Открываем новое окно с изображением
+  window.open(
+    picUrl,
+    "",
+    `toolbar=no, location=no, 
+    directories=no,
+     status=no,
+      menubar=no, 
+      scrollbars=yes, resizable=yes, copyhistory=no,
+      width=${windowWidth}, height=${windowHeight}, top=${top}, left=${left}`
+  );
+});
 
   return newRow;
 };
