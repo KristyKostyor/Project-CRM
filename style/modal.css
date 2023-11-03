@@ -61,3 +61,51 @@
     height: 20px;
     border-style: none;
 }
+
+.modal-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal-error__content {
+    width: 350px;
+    /* Ширина окна */
+    height: 350px;
+    /* Высота окна */
+    background-color: #fff;
+    /* Цвет фона */
+    padding: 20px;
+    /* Внутренний отступ */
+    border-radius: 10px;
+    /* Закругленные углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Тень */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal-error__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.modal-error__text {
+    margin-top: 30px;
+    /* Добавьте любой другой необходимый стиль для текста */
+}

@@ -84,14 +84,14 @@ imgBtn.addEventListener("click",  (e) => {
     picUrl,
     "",
     `toolbar=no, location=no, 
-    directories=no,
-     status=no,
+      directories=no,
+      status=no,
       menubar=no, 
       scrollbars=yes, resizable=yes, copyhistory=no,
       width=${windowWidth}, height=${windowHeight}, top=${top}, left=${left}`
   );
 });
-
   return newRow;
 };
+
 export default createRow;

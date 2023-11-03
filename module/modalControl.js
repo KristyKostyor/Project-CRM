@@ -4,6 +4,7 @@ export const overlay = document.querySelector(".overlay");
 export const closeButton = document.querySelector(".modal__button-cancel");
 export const addGood = document.querySelector(".product__search-form__button");
 
+
 export const openModal = () => {
   modal.style.display = "flex";
   overlay.style.display = "flex";

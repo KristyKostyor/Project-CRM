@@ -7,6 +7,7 @@ import { submitForm } from "./module/submitForm.js";
 import {  modal, openModal, closeModal, addGood } from "./module/modalControl.js";
 import { updateTotalPrice } from "./module/updateTotalPrice.js";
 import { discountCheck } from "./module/discountCheck.js";
+import { addGoodPage, getData } from "./module/data.js";
 
 
 const form = document.querySelector("#form-modal");
@@ -16,6 +17,7 @@ const discountSum = document.querySelector("#discount-sum");
 const overlay = document.querySelector(".overlay");
 const delBtn = document.querySelector("#delBtn");
 const tableBody = document.querySelector("tbody");
+
 
 submitForm(
   form,
@@ -29,6 +31,8 @@ submitForm(
 
 const init = () =>{
 discountCheck();
+getData();
+renderGoods(addGoodPage);
 
 }
 
