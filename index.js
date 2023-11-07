@@ -33,7 +33,6 @@ submitForm(
 const init = () =>{
 discountCheck();
 getData();
-renderGoods(addGoodPage);
 
 }
 
