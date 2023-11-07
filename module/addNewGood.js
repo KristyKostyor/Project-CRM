@@ -3,6 +3,14 @@ import updateTotalPriceTable from "./updateTotalPriceTable.js";
 import { addGoodPage, postGood } from "./data.js";
 import { createModalError } from "./modalError.js";
 
+const getRandomInt = (min, max) => {
+  min = min < max ? min : max;
+  max = min > max ? min : max;
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 const addNewGoodFunction = () => {
   const addNewGood = document.querySelector(".form__button");
   const table = document.querySelector("table");
@@ -44,12 +52,8 @@ const addNewGoodFunction = () => {
         const newRow = document.createElement("tr");
         newRow.classList.add("table__tr");
 
-        const generateId = () => {
-          return getRandomInt(100000000, 999999999);
-        };
-
         newRow.innerHTML = `
-          <td class="table__cell-td">${productId}</td>
+          <td class="table__cell-td">${response.id}</td>
           <td class="table__cell-td">${name}</td>
           <td class="table__cell-td">${category}</td>
           <td class="table__cell-td">${scale}</td>
@@ -58,19 +62,13 @@ const addNewGoodFunction = () => {
           <td class="table__cell-td">${total.toFixed(2)}</td>
           <td class="table__cell-td">
             <button class="table__cell-btn">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- SVG-код вашей кнопки -->
-              </svg>
+              <!-- Вставьте SVG-код вашей кнопки -->
             </button>
             <button class="table__cell-btn">
-              <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- SVG-код вашей кнопки -->
-              </svg>
+              <!-- Вставьте SVG-код вашей кнопки -->
             </button>
             <button class="delBtn">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- SVG-код вашей кнопки -->
-              </svg>
+              <!-- Вставьте SVG-код вашей кнопки -->
             </button>
           </td>
         `;
