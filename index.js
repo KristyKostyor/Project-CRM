@@ -8,6 +8,7 @@ import {  modal, openModal, closeModal, addGood } from "./module/modalControl.js
 import { updateTotalPrice } from "./module/updateTotalPrice.js";
 import { discountCheck } from "./module/discountCheck.js";
 import { addGoodPage, getData } from "./module/data.js";
+import { createModalError } from "./module/modalError.js";
 
 
 const form = document.querySelector("#form-modal");

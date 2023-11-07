@@ -1,7 +1,7 @@
-export const createModalError = () => {
+export const createModalError = (overlay) => {
   const modal = document.querySelector(".modal");
 
-  const modalError = document.createElement("div");
+   const modalError = document.createElement("div");
   modalError.classList.add("modal-error", "is-visible");
 
   modalError.innerHTML = `

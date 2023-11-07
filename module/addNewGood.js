@@ -1,5 +1,5 @@
-import updateTotalPriceTable from "./updateTotalPriceTable.js";
 import { modal, overlay } from "./modalControl.js";
+import updateTotalPriceTable from "./updateTotalPriceTable.js";
 import { addGoodPage, postGood } from "./data.js";
 import { createModalError } from "./modalError.js";
 
@@ -44,7 +44,7 @@ const addNewGoodFunction = () => {
         const newRow = document.createElement("tr");
         newRow.classList.add("table__tr");
 
-        const productId = generateId();
+        const productId = generateId(); // Убедитесь, что функция generateId определена или импортирована
 
         newRow.innerHTML = `
           <td class="table__cell-td">${productId}</td>
@@ -89,10 +89,11 @@ const addNewGoodFunction = () => {
         overlay.style.display = "none";
       } else {
         console.error("Ошибка при добавлении товара на сервер.");
+        createModalError(overlay); // Передаем overlay в функцию
       }
     } catch (error) {
       console.error("Ошибка при отправке данных на сервер:", error);
-       createModalError(); 
+      createModalError(overlay); // Передаем overlay в функцию
     }
   });
 };

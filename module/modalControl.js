@@ -22,8 +22,7 @@ export const overlayClick = (e) => {
   }
 };
 
+modal.style.display = "flex";
 closeButton.addEventListener("click", closeModal);
 overlay.addEventListener("click", overlayClick);
 addGood.addEventListener("click", openModal);
-
-modal.style.display = "flex";
