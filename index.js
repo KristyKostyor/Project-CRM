@@ -33,7 +33,7 @@ submitForm(
 const init = () =>{
 discountCheck();
 getData();
-
+generateId();
 }
 
 init();

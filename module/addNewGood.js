@@ -44,7 +44,9 @@ const addNewGoodFunction = () => {
         const newRow = document.createElement("tr");
         newRow.classList.add("table__tr");
 
-        const productId = generateId(); // Убедитесь, что функция generateId определена или импортирована
+        const generateId = () => {
+          return getRandomInt(100000000, 999999999);
+        };
 
         newRow.innerHTML = `
           <td class="table__cell-td">${productId}</td>
