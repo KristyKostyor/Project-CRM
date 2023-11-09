@@ -33,6 +33,7 @@ submitForm(
 const init = () =>{
 discountCheck();
 getData();
+openModal();
 }
 
 init();
