@@ -11,6 +11,7 @@ import { addGoodPage, getData } from "./module/data.js";
 import { createModalError } from "./module/modalError.js";
 
 
+
 const form = document.querySelector("#form-modal");
 const modalTitle = document.querySelector(".modal__title");
 const idInput = document.querySelector("#name");
@@ -34,6 +35,7 @@ const init = () =>{
 discountCheck();
 getData();
 openModal();
+
 }
 
 init();

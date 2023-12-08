@@ -32,7 +32,7 @@ const addNewGoodFunction = () => {
 
       const data = {
         title: name,
-        category:category,
+        category: category,
         description: description,
         price: parseFloat(modalPrice),
         count: parseInt(modalAmount),
