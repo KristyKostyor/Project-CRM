@@ -1,11 +1,15 @@
-import createRow  from "./createRow.js";
+import createRow from "./createRow.js";
 import { API_URL } from "./api.js";
+import { openModal } from "./modalControl.js";
+  
+
+let productId = 2074454224;
+
 
 
 export const getData = async () => {
   const response = await fetch(`${API_URL}api/goods/`);
   const goods = await response.json();
-  console.log("getData = ", goods);
   return goods;
 };
 
@@ -61,3 +65,55 @@ export const removeGood = async (id) => {
   }
   throw new Error(response.status);
 };
+
+
+const populateModalFields = async (productId) => {
+  try {
+    console.log("populateModalFields called"); 
+    const productData = await getGood(productId);
+
+    const nameInput = document.getElementById("name");
+    const categoryInput = document.getElementById("scale-input");
+
+    nameInput.value = productData.name;
+    categoryInput.value = productData.category;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOMContentLoaded event fired"); 
+  const editButton = document.getElementById("edit-button");
+
+  editButton.addEventListener("click", () => {
+    populateModalFields(productId);
+    console.log("editButton:", editButton);
+      console.log("button clicked");
+    openModal();
+  });
+});
+// Функция для получения товара по его ID
+const getGoodById = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}api/goods/${id}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch good with ID ${id}`);
+    }
+    const good = await response.json();
+    return good;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+getGoodById(productId)
+  .then((good) => {
+    console.log("Received good:", good);
+  })
+  .catch((error) => {
+    console.error("Error fetching good:", error);
+  });

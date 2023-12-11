@@ -21,7 +21,7 @@ export const renderGoods = (goodsData) => {
 getData()
   .then((data) => {
     if (data && data.goods) {
-      renderGoods(data.goods); // Отображаем товары в таблице
+      renderGoods(data.goods); 
     } else {
       console.error("Данные, полученные из API, не содержат массива товаров.");
     }

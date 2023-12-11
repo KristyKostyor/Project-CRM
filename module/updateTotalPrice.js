@@ -1,4 +1,9 @@
-export const updateTotalPrice = (modalAmountInput, modalPriceInput, totalPrice) => {
+import createModal from "./createModal.js";
+export const updateTotalPrice = (
+  modalAmountInput,
+  modalPriceInput,
+  totalPrice
+) => {
   const amount = parseInt(modalAmountInput.value);
   const price = parseFloat(modalPriceInput.value);
 
@@ -7,7 +12,6 @@ export const updateTotalPrice = (modalAmountInput, modalPriceInput, totalPrice) 
     totalPrice.textContent = total.toFixed(2);
   }
 };
-
 
 const modalAmountInput = document.getElementById("amount");
 const modalPriceInput = document.getElementById("price");

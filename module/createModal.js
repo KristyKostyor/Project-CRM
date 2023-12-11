@@ -1,12 +1,18 @@
+
 const createModal = () => {
   const overlay = document.createElement("div");
-  overlay.classList.add("modal", "overlay");
+  overlay.classList.add("overlay");
 
-  const modal = document.createElement("div"); 
-  modal.classList.add("modal__form", "modal__wrapper");
-  form.insertAdjacentHTML(
+  const modal = document.createElement("div");
+  modal.classList.add("modal");
+
+ 
+  modal.insertAdjacentHTML(
     "beforeend",
-    ` <h1 class="modal__title">Добавить товар</h1>
+    `
+            <div class="modal__form">
+            <div class="modal__wrapper">
+                <h1 class="modal__title">Добавить товар</h1>
                 <button class="modal__button-cancel">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round" />
@@ -52,7 +58,8 @@ const createModal = () => {
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
 
-  return modal; 
+  return overlay; // Возвращаем overlay, чтобы можно было работать с модальным окном
 };
 
-const modalElement = createModal()
+const modalElement = createModal();
+export default createModal;

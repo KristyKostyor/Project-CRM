@@ -1,3 +1,5 @@
+import  createModal  from "./createModal.js";
+
 export const modal = document.querySelector(".modal");
 export const overlay = document.querySelector(".overlay");
 export const closeButton = document.querySelector(".modal__button-cancel");
