@@ -1,12 +1,9 @@
 import createRow from "./createRow.js";
 import { API_URL } from "./api.js";
 import { openModal } from "./modalControl.js";
-  
+
 
 let productId = 2074454224;
-
-
-
 export const getData = async () => {
   const response = await fetch(`${API_URL}api/goods/`);
   const goods = await response.json();
@@ -66,36 +63,41 @@ export const removeGood = async (id) => {
   throw new Error(response.status);
 };
 
-
 const populateModalFields = async (productId) => {
   try {
-    console.log("populateModalFields called"); 
     const productData = await getGood(productId);
-
     const nameInput = document.getElementById("name");
     const categoryInput = document.getElementById("scale-input");
+    const scaleInput = document.getElementById("scale");
+    const descriptionInput = document.getElementById("discription");
+    const amountInput = document.getElementById("amount");
+    const priceInput = document.getElementById("price");
 
-    nameInput.value = productData.name;
+    nameInput.value = productData.title;
     categoryInput.value = productData.category;
+    scaleInput.value=productData.units;
+    descriptionInput.value=productData.description;
+    amountInput.value=productData.count;
+    priceInput.value=productData.price;
+
   } catch (error) {
     console.error(error);
   }
 };
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOMContentLoaded event fired"); 
-  const editButton = document.getElementById("edit-button");
-
-  editButton.addEventListener("click", () => {
-    populateModalFields(productId);
-    console.log("editButton:", editButton);
+  console.log("DOMContentLoaded event fired");
+  const editButtons = document.querySelectorAll(".edit-button");
+  editButtons.forEach((editButton) => {
+    editButton.addEventListener("click", () => {
+      populateModalFields(productId);
       console.log("button clicked");
-    openModal();
+      openModal();
+    });
   });
 });
-// Функция для получения товара по его ID
+
+
 const getGoodById = async (id) => {
   try {
     const response = await fetch(`${API_URL}api/goods/${id}`);

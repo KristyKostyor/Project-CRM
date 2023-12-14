@@ -26,3 +26,5 @@ modal.style.display = "flex";
 closeButton.addEventListener("click", closeModal);
 overlay.addEventListener("click", overlayClick);
 addGood.addEventListener("click", openModal);
+
+

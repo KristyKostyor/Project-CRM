@@ -44,7 +44,7 @@ const addNewGoodFunction = () => {
       const productId = generateId();
 
       newRow.innerHTML = `
-      <td class="table__cell-td">${productId}</td>
+      <td class="table__cell-td table__cell-td-first">${productId}</td>
       <td class="table__cell-td">${name}</td>
       <td class="table__cell-td">${category}</td>
       <td class="table__cell-td">${scale}</td>

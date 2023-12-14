@@ -43,10 +43,12 @@ const createModal = () => {
                         <label class="form__price form__label__style" for="price">Цена</label>
                         <input class="form__style__input" type="number" name="price" id="price" required>
 
-                        <div class="form__add-block">
-                            <label for="file" class="form__add-img">Добавить изображение</label>
-                            <input type="file" id="file" accept=".jpg, .jpeg, .png" size="1000" class="file-input">
-                        </div>
+                       <div class="form__add-block">
+  <label for="file" class="form__add-img">Добавить изображение</label>
+  <input type="file" id="file" accept=".jpg, .jpeg, .png" size="1000000" class="file-input">
+</div>
+<img id="image-preview" src="" alt="Preview" class="image-preview">
+<p id="error-message" class="error-message"></p>
                     </fieldset>
                 </form>
                 <div class="modal__add-block">
@@ -58,8 +60,32 @@ const createModal = () => {
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
 
-  return overlay; // Возвращаем overlay, чтобы можно было работать с модальным окном
+  return overlay; 
 };
 
 const modalElement = createModal();
 export default createModal;
+
+
+const fileInput = document.getElementById("file");
+const imagePreview = document.getElementById("image-preview");
+const errorMessage = document.getElementById("error-message");
+
+
+fileInput.addEventListener("change", (event) => {
+  const selectedFile = event.target.files[0];
+
+  if (selectedFile) {
+
+    if (selectedFile.size <= 1000000) {
+
+      const imageURL = URL.createObjectURL(selectedFile);
+      imagePreview.src = imageURL;
+      errorMessage.textContent = "";
+    } else {
+   
+      imagePreview.src = ""; 
+      errorMessage.textContent = "Изображение не должно превышать размер 1 Мб";
+    }
+  }
+});
