@@ -8,18 +8,25 @@ export const submitForm = (
   modal,
   overlay
 ) => {
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const newRowData = Object.fromEntries(formData.entries());
-    goods.push(newRowData);
-    const newRow = createRow(newRowData);
-    tableBody.append(newRow);
-    updateTotalPriceTable();
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-    form.reset();
-    modal.style.display = "none";
-    overlay.style.display = "none";
-  });
+
+  const formData = new FormData(event.target);
+  const newRowData = Object.fromEntries(formData.entries());
+  goods.push(newRowData);
+  const newRow = createRow(newRowData);
+  tableBody.append(newRow);
+  updateTotalPriceTable();
+
+  form.reset();
+  modal.style.display = "none";
+  overlay.style.display = "none";
+});
+
 };
+
+
+
+

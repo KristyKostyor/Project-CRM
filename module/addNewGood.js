@@ -8,7 +8,7 @@ const addNewGoodFunction = () => {
   const table = document.querySelector("table");
   const tableBody = table.querySelector("tbody");
 
-  addNewGood.addEventListener("click", async () => {
+  addNewGood.addEventListener("click", async (event) => {
     try {
       const getRandomInt = (min, max) => {
         min = min < max ? min : max;
@@ -29,6 +29,23 @@ const addNewGoodFunction = () => {
       const modalAmount = document.getElementById("amount").value;
       const modalPrice = document.getElementById("price").value;
       const total = modalAmount * modalPrice;
+   if (
+     name.trim() === "" ||
+     category.trim() === "" ||
+     scale.trim() === "" ||
+     modalAmount.trim() === "" ||
+     modalPrice.trim() === ""
+   ) {
+     alert("Заполните все обязательные поля.");
+     event.preventDefault(); 
+     return;
+   }
+
+   if (!discount && description.length < 80) {
+     alert("Описание должно содержать не менее 80 символов.");
+     event.preventDefault();
+     return;
+   }
 
       const data = {
         title: name,
@@ -38,6 +55,7 @@ const addNewGoodFunction = () => {
         count: parseInt(modalAmount),
         units: scale,
       };
+
 
       const newRow = document.createElement("tr");
       newRow.classList.add("table__tr");

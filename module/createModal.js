@@ -62,6 +62,7 @@ const createModal = () => {
 
   return overlay; 
 };
+   
 
 const modalElement = createModal();
 export default createModal;
@@ -89,3 +90,34 @@ fileInput.addEventListener("change", (event) => {
     }
   }
 });
+   const nameInput = document.getElementById("name");
+   const category = document.getElementById("scale-input");
+   const description = document.getElementById("discription");
+   const scale = document.getElementById("scale");
+   const discountSum = document.getElementById("discount-sum");
+   const modalAmount = document.getElementById("amount");
+   const modalPrice = document.getElementById("price");
+
+   nameInput.addEventListener("input", () => {
+     nameInput.value = nameInput.value.replace(/[^А-Яа-я\s]/g, "");
+   });
+     category.addEventListener("input", () => {
+       category.value = category.value.replace(/[^А-Яа-я\s]/g, "");
+     });
+       description.addEventListener("input", () => {
+         description.value = description.value.replace(/[^А-Яа-я\s]/g, "");
+       });
+         scale.addEventListener("input", () => {
+           scale.value = scale.value.replace(/[^А-Яа-я]/g, "");
+         });
+          discountSum.addEventListener("input", () => {
+            discountSum.value = discountSum.value.replace(/\D/g, "");
+          });
+             modalAmount.addEventListener("input", () => {
+               modalAmount.value = modalAmount.value.replace(/\D/g, "");
+             });
+               modalPrice.addEventListener("input", () => {
+                 modalPrice.value = modalPrice.value.replace(/\D/g, "");
+               });
+
+          
