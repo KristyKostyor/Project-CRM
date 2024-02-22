@@ -1,0 +1,58 @@
+.limits {
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    outline: none;
+    position: relative;
+    background-image: url(../../assets/svg/select-arrow-icon.svg);
+    background-position: center right 5px;
+    background-repeat: no-repeat;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.page-arrows {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.page-arrows__btn {
+    font-size: 0;
+    display: block;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-arrows__btn:hover {
+    background-color: var(--main-form-text);
+}
+
+.page-arrows__btn:hover>svg {
+    color: var(--main-color);
+}
+
+.arrow-icon_right {
+    transform: rotate(180deg);
+}
+
+.arrow-icon {
+    color: var(--main-form-text);
+}
+
+.elements {
+    margin-left: 50px;
+    margin-right: 50px;
+}

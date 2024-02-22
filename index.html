@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/index.css">
+    <title>CRM</title>
+    <script defer src="js/script.js" type="module"></script>
+</head>
+
+<body class="page">
+    <header class="header">
+        <h1 class="hidden">Форма добавления товара</h1>
+    </header>
+    <div class="container">
+        <div class="info row info__row row__al-i-c">
+            <h2 class="page__title">CMS</h2>
+            <p class="info__text">Итоговая стоимость: <span class="currency">$</span><span class="total"></span></p>
+        </div>
+        <div class="wrapper">
+            <div class="controls row row__al-i-c">
+                <button class="btn filter-btn">Фильтр</button>
+                <form action="#" class="search" method="post" id="search">
+                    <input type="search" class="search__input" placeholder="Поиск по наименованию и категории">
+                    <button class="btn search__btn">Поиск</button>
+                </form>
+                <button type="button" class="btn form__btn_add-product ">Добавить товар</button>
+            </div>
+            <div class="table-wrapper">
+                <table cellpadding="0" cellspacing="0" class="table">
+                    <thead class="table__head">
+                        <th class="table__cell-name table__cell-name_id">ID</th>
+                        <th class="table__cell-name">Наименование</th>
+                        <th class="table__cell-name">Категория</th>
+                        <th class="table__cell-name table__cell-name_center">ед/езм</th>
+                        <th class="table__cell-name table__cell-name_center">количество</th>
+                        <th class="table__cell-name table__cell-name_right">цена</th>
+                        <th class="table__cell-name table__cell-name_right">ИТОГ</th>
+                        <th class="table__cell-name"></th>
+                    </thead>
+                    <tbody class="table-body">
+                    </tbody>
+                </table>
+            </div>
+            <div class="bottom-controls row row__al-i-c">
+                <label for="items-limit">Показывать на страницe:</label>
+                <select name="limits" id="items-limit" class="limits">
+                    <option value="value1">5</option>
+                    <option value="value2" selected>10</option>
+                    <option value="value3">50</option>
+                </select>
+                <div class="elements">
+                    <span class="elements__ammount">1-10</span> of
+                    <span class="elements__total">276</span>
+                </div>
+                <div class="page-arrows">
+                    <button class="btn page-arrows__btn page-arrows__btn_next" title="Туды">Следующая страница
+                        <svg class="icon arrow-icon" width="6" height="10">
+                            <use href="#arrow"></use>
+                        </svg>
+                    </button>
+                    <button class="btn page-arrows__btn page-arrows__btn_prev" title="Сюды">Предидущая страница
+                        <svg class="icon arrow-icon arrow-icon_right" width="6" height="10">
+                            <use href="#arrow"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <svg class="hidden">
+    <symbol id="arrow" viewBox="0 0 6 10">
+        <path d="M5.79971 1.10636C6.42812 0.51287 5.43313 -0.426818 4.80472 0.216126L0.196378 4.51891C-0.0654595 4.7662 -0.0654595 5.21131 0.196378 5.4586L4.80472 9.81084C5.43313 10.4043 6.42812 9.46464 5.79971 8.87115L1.71504 5.01348L5.79971 1.10636Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="change-icon" viewBox="0 0 20 20">
+        <g clip-path="url(#clip0_1_334)">
+            <path d="M15.5629 4.86078L17.6394 6.93629L15.5629 4.86078ZM16.8982 3.03233L11.2834 8.64709C10.9933 8.9368 10.7955 9.3059 10.7148 9.70789L10.1962 12.304L12.7923 11.7844C13.1942 11.704 13.5629 11.5069 13.8531 11.2167L19.4678 5.60196C19.6366 5.43324 19.7704 5.23293 19.8617 5.01248C19.953 4.79203 20 4.55576 20 4.31714C20 4.07853 19.953 3.84225 19.8617 3.6218C19.7704 3.40136 19.6366 3.20105 19.4678 3.03233C19.2991 2.8636 19.0988 2.72976 18.8784 2.63845C18.6579 2.54714 18.4216 2.50014 18.183 2.50014C17.9444 2.50014 17.7081 2.54714 17.4877 2.63845C17.2672 2.72976 17.0669 2.8636 16.8982 3.03233V3.03233Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.0394 14.2648V17.206C18.0394 17.726 17.8328 18.2248 17.4651 18.5925C17.0973 18.9602 16.5986 19.1668 16.0786 19.1668H5.29415C4.77411 19.1668 4.27537 18.9602 3.90765 18.5925C3.53993 18.2248 3.33334 17.726 3.33334 17.206V6.42157C3.33334 5.90154 3.53993 5.4028 3.90765 5.03508C4.27537 4.66735 4.77411 4.46077 5.29415 4.46077H8.23535" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_1_334">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+    </symbol>
+    <symbol id="delete-icon" viewBox="0 0 20 20">
+        <path d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z" fill="currentColor"/>
+
+    </symbol>
+    <symbol id="close" viewBox="0 0 24 24">
+        <path d="M2 2L22 22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M2 22L22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+
+   <symbol id="delete-image" viewBox="0 0 40 40">
+       <path d="M23.5334 17.45L20 20.9833L16.45 17.45L14.1 19.8L17.65 23.3333L14.1167 26.8667L16.4667 29.2167L20 25.6833L23.5334 29.2167L25.8834 26.8667L22.35 23.3333L25.8834 19.8L23.5334 17.45ZM25.8334 6.66667L24.1667 5H15.8334L14.1667 6.66667H8.33337V10H31.6667V6.66667H25.8334ZM10 31.6667C10 33.5 11.5 35 13.3334 35H26.6667C28.5 35 30 33.5 30 31.6667V11.6667H10V31.6667ZM13.3334 15H26.6667V31.6667H13.3334V15Z" fill="currentColor"/>
+   </symbol>
+</svg>
+</body>
+
+</html>

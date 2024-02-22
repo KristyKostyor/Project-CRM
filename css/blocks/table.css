@@ -1,0 +1,142 @@
+    .table {
+        background: #FFFFFF;
+        border-radius: 8px;
+        border-collapse: collapse;
+        min-width: 600px;
+        width: 100%;
+    }
+    
+    .controls {
+        padding: 15px 20px;
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: 20px;
+    }
+    
+    .table__head {
+        background-color: var(--main-input-bg);
+        border-top: 1px solid var(--main-border-color);
+        border-bottom: 1px solid var(--main-border-color);
+    }
+    
+    .table__row:first-child {
+        border-top: none;
+    }
+    
+    .table__row:last-child {
+        border-bottom: none;
+    }
+    
+    .table__row {
+        border-top: 1px solid var(--main-border-color);
+        border-bottom: 1px solid var(--main-border-color);
+    }
+    
+    .table__cell-name {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--main-form-text);
+        text-align: left;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+    
+    .table__cell-name_center {
+        text-align: center;
+        min-width: 55px;
+    }
+    
+    .table__cell-name_right {
+        text-align: right;
+        width: 80px;
+    }
+    
+    .table__cell-name:first-child {
+        padding-left: 15px;
+    }
+    
+    .table__cell-value {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    
+    tr,
+    td {
+        padding-left: 15px;
+    }
+    
+    .quantity,
+    .unit {
+        text-align: center;
+    }
+    
+    .price,
+    .cost {
+        text-align: right;
+    }
+    /*Кнопка внутри списка*/
+    
+    .controls__btn {
+        font-size: 0;
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .controls__btn_img_bad {
+        background-image: url(../../assets/svg/image-status-bad.svg);
+    }
+    
+    .controls__btn_img_ok {
+        background-image: url(../../assets/svg/image-status-ok.svg);
+    }
+    
+    .change-icon,
+    .delete-icon {
+        fill: transparent;
+        color: var(--main-form-text);
+    }
+    
+    .delete-icon:hover {
+        color: red;
+    }
+    
+    .change-icon:hover {
+        color: limegreen;
+    }
+    
+    .controls__btn_delete {
+        background-image: url(../../assets/svg/delete-icon.svg);
+    }
+
+    .name {
+        position: relative;
+    }
+    .name_discount {
+
+        background-image: url(../../assets/svg/discount-icon.svg);
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+
+        background-repeat: no-repeat;
+    }
+    ::placeholder {
+        font-size: 12px;
+    }
+    @media (max-width:820px) {
+        .controls {
+            row-gap: 20px;
+        }
+    }

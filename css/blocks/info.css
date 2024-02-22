@@ -1,0 +1,37 @@
+.info {
+    color: var(--main-form-text);
+    margin-bottom: 20px;
+}
+.page__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    
+}
+.info__text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+.currency {
+    font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+color: var(--main-primary);
+
+}
+.total {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--main-primary);
+
+}
+.info__row{
+    justify-content: space-between;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--main-border-color);
+}

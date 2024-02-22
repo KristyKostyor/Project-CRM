@@ -1,0 +1,16 @@
+.filter-btn {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #25213B;
+    padding-left: 40px;
+    padding-right: 10px;
+    width: 108px;
+    height: 40px;
+    background-image: url(../../assets/svg/filter-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center left 10px;
+    border: 1px solid #C6C2DE;
+    border-radius: 6px;
+    margin-right: 20px;
+}
